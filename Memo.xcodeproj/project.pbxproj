@@ -102,9 +102,6 @@
 			children = (
 				DA2E74161BA4C9F50083E246 /* AppDelegate.swift */,
 				DA2E74181BA4C9F50083E246 /* ViewController.swift */,
-				DA2E74361BA4D1A20083E246 /* BridgingHeader.h */,
-				DA2E741D1BA4C9F50083E246 /* Images.xcassets */,
-				DA2E741F1BA4C9F50083E246 /* LaunchScreen.xib */,
 				DA2E74141BA4C9F50083E246 /* Supporting Files */,
 			);
 			path = Memo;
@@ -113,6 +110,9 @@
 		DA2E74141BA4C9F50083E246 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA2E74361BA4D1A20083E246 /* BridgingHeader.h */,
+				DA2E741D1BA4C9F50083E246 /* Images.xcassets */,
+				DA2E741F1BA4C9F50083E246 /* LaunchScreen.xib */,
 				DA2E74151BA4C9F50083E246 /* Info.plist */,
 			);
 			name = "Supporting Files";
