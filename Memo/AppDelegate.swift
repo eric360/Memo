@@ -15,6 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("iCso3Ym1hI1haWMKnKxxfCFxMKK2zTiFPIR3mD29",
+            clientKey: "Xq70TTn3eueSKOer4IdDhAspBPNzK1pUTsQDAckN")
+        
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()

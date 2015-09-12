@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5EC40E8E-F4FB-4191-80AE-6A095F01FB68</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Memo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CBC671E5DCA5388EB8137CB934FD14F46CC0D361</key>
+		<string>https://github.com/eric360/Memo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Memo.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CBC671E5DCA5388EB8137CB934FD14F46CC0D361</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eric360/Memo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CBC671E5DCA5388EB8137CB934FD14F46CC0D361</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CBC671E5DCA5388EB8137CB934FD14F46CC0D361</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Memo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
