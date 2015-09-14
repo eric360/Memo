@@ -28,24 +28,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate
     {
         for location in locations
         {
-            println("--------------")
-            println("Longitude")
-            println(location.coordinate.longitude)
-            println("Latitude")
-            println(location.coordinate.latitude)
+            var position = PFObject(className: "Position")
+            position["latitude"] = location.coordinate.latitude
+            position["longitude"] = location.coordinate.longitude
+             position.saveInBackgroundWithBlock({ (success, error) -> Void in
+                println("Success")
+                println(success)
+             })
         }
-        
-//        PFObject *gameScore = [PFObject objectWithClassName:@"Position"];
-//        gameScore[@"score"] = @1337;
-//        gameScore[@"playerName"] = @"Sean Plott";
-//        gameScore[@"cheatMode"] = @NO;
-//        [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//        // The object has been saved.
-//        } else {
-//        // There was a problem, check error.description
-//        }
-//        }];
     }
 }
 
