@@ -14,11 +14,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate
     {
         super.viewDidLoad()
         var locationManager : CLLocationManager =  CLLocationManager()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = 100
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
+        locationManager.requestAlwaysAuthorization()
     }
     override func didReceiveMemoryWarning()
     {
