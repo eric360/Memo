@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate
 {
+    var locationManager : CLLocationManager =  CLLocationManager()
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        var locationManager : CLLocationManager =  CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = 100
         locationManager.distanceFilter = 10
