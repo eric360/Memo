@@ -19,6 +19,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
         locationManager.requestAlwaysAuthorization()
+        locationManager.activityType = CLActivityType.Fitness
+//        locationManager.pausesLocationUpdatesAutomatically = true
     }
     override func didReceiveMemoryWarning()
     {
@@ -31,10 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             var position = PFObject(className: "Position")
             position["latitude"] = location.coordinate.latitude
             position["longitude"] = location.coordinate.longitude
-             position.saveInBackgroundWithBlock({ (success, error) -> Void in
-                println("Success")
-                println(success)
-             })
+            position.saveInBackgroundWithBlock({ (success, error) -> Void in
+            })
         }
     }
 }
