@@ -15,25 +15,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        // CLLocationManager
         locationManager.delegate = self
         locationManager.desiredAccuracy = 100
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
         locationManager.requestAlwaysAuthorization()
         locationManager.activityType = CLActivityType.Fitness
-//        locationManager.pausesLocationUpdatesAutomatically = true
-        var query = PFQuery(className: "Position")
-        query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
-            println(results)
-        }
+        // locationManager.pausesLocationUpdatesAutomatically = true
+        // UITableView
         tableView.frame = self.view.frame
         self.view.addSubview(tableView)
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.query { (results) -> Void in
+            println(results)
+        }
     }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    func query(completion:((results:[PFObject]!) -> Void)){
+        var query = PFQuery(className: "Position")
+        query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            if let results = results as? [PFObject]{
+                completion(results: results)
+            }
+        }
     }
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
