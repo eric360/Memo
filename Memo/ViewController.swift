@@ -12,6 +12,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 {
     var locationManager : CLLocationManager =  CLLocationManager()
     var tableView : UITableView = UITableView()
+    var results : [PFObject]?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -29,14 +30,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.query { (results) -> Void in
-            println(results)
+            self.results = results
+            self.tableView.reloadData()
         }
     }
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
-    func query(completion:((results:[PFObject]!) -> Void)){
+    private func query(completion:((results:[PFObject]!) -> Void)){
         var query = PFQuery(className: "Position")
         query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             if let results = results as? [PFObject]{
@@ -44,6 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             }
         }
     }
+    //CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
     {
         for location in locations
@@ -55,6 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             })
         }
     }
+    // UITableViewDatasource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
