@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate
+class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource
 {
     var locationManager : CLLocationManager =  CLLocationManager()
     var tableView : UITableView = UITableView()
@@ -28,6 +28,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         }
         tableView.frame = self.view.frame
         self.view.addSubview(tableView)
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     override func didReceiveMemoryWarning()
     {
@@ -43,6 +45,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             position.saveInBackgroundWithBlock({ (success, error) -> Void in
             })
         }
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        cell.textLabel?.text = "text"
+        return cell
+    }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     return 5
     }
 }
 
