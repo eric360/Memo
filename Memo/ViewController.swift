@@ -12,7 +12,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 {
     var locationManager : CLLocationManager =  CLLocationManager()
     var tableView : UITableView = UITableView()
-    var results : [PFObject]?
+    var results : [PFObject] = [PFObject]()
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -62,11 +62,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
-        cell.textLabel?.text = "text"
+        var object = results[indexPath.row]
+        println(object)
+        let test = object["latitude"] as! Double
+        cell.textLabel?.text = String(format: "%f", test)
+        println(test)
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     return 5
+        return results.count
     }
 }
 
