@@ -21,6 +21,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
         locationManager.activityType = CLActivityType.Fitness
 //        locationManager.pausesLocationUpdatesAutomatically = true
+        var query = PFQuery(className: "Position")
+        query.getFirstObjectInBackgroundWithBlock { (object, error) -> Void in
+            println(object)
+        }
     }
     override func didReceiveMemoryWarning()
     {
