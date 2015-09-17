@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, CLLocationManagerDelegate
 {
     var locationManager : CLLocationManager =  CLLocationManager()
+    var tableView : UITableView = UITableView()
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             println(results)
         }
+        tableView.frame = self.view.frame
+        self.view.addSubview(tableView)
     }
     override func didReceiveMemoryWarning()
     {
