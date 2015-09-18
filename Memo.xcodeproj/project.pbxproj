@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D58159406D35BAC7C18B65AB /* libPods-Memo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 777FFFD16899D9C539A00297 /* libPods-Memo.a */; };
+		DA1C182D1BABE97D00E2F114 /* MTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1C182C1BABE97D00E2F114 /* MTableViewCell.xib */; };
+		DA1C182F1BABE9F500E2F114 /* MTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1C182E1BABE9F500E2F114 /* MTableViewCell.swift */; };
 		DA2E74171BA4C9F50083E246 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E74161BA4C9F50083E246 /* AppDelegate.swift */; };
-		DA2E74191BA4C9F50083E246 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E74181BA4C9F50083E246 /* ViewController.swift */; };
+		DA2E74191BA4C9F50083E246 /* MViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E74181BA4C9F50083E246 /* MViewController.swift */; };
 		DA2E741E1BA4C9F50083E246 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA2E741D1BA4C9F50083E246 /* Images.xcassets */; };
 		DA2E74211BA4C9F50083E246 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2E741F1BA4C9F50083E246 /* LaunchScreen.xib */; };
 		DA2E742D1BA4C9F50083E246 /* MemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2E742C1BA4C9F50083E246 /* MemoTests.swift */; };
@@ -29,10 +31,12 @@
 		500B9BECB4FDABE99F109A75 /* Pods-Memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.release.xcconfig"; sourceTree = "<group>"; };
 		777FFFD16899D9C539A00297 /* libPods-Memo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Memo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21CB7B067768C653EA7A3B4 /* Pods-Memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Memo/Pods-Memo.debug.xcconfig"; sourceTree = "<group>"; };
+		DA1C182C1BABE97D00E2F114 /* MTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTableViewCell.xib; sourceTree = "<group>"; };
+		DA1C182E1BABE9F500E2F114 /* MTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTableViewCell.swift; sourceTree = "<group>"; };
 		DA2E74111BA4C9F50083E246 /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA2E74151BA4C9F50083E246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2E74161BA4C9F50083E246 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA2E74181BA4C9F50083E246 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA2E74181BA4C9F50083E246 /* MViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MViewController.swift; sourceTree = "<group>"; };
 		DA2E741D1BA4C9F50083E246 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DA2E74201BA4C9F50083E246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DA2E74261BA4C9F50083E246 /* MemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				DA2E74161BA4C9F50083E246 /* AppDelegate.swift */,
-				DA2E74181BA4C9F50083E246 /* ViewController.swift */,
+				DA2E74181BA4C9F50083E246 /* MViewController.swift */,
+				DA1C182C1BABE97D00E2F114 /* MTableViewCell.xib */,
+				DA1C182E1BABE9F500E2F114 /* MTableViewCell.swift */,
 				DA2E74141BA4C9F50083E246 /* Supporting Files */,
 			);
 			path = Memo;
@@ -217,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1C182D1BABE97D00E2F114 /* MTableViewCell.xib in Resources */,
 				DA2E74211BA4C9F50083E246 /* LaunchScreen.xib in Resources */,
 				DA2E741E1BA4C9F50083E246 /* Images.xcassets in Resources */,
 			);
@@ -269,7 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA2E74191BA4C9F50083E246 /* ViewController.swift in Sources */,
+				DA1C182F1BABE9F500E2F114 /* MTableViewCell.swift in Sources */,
+				DA2E74191BA4C9F50083E246 /* MViewController.swift in Sources */,
 				DA2E74171BA4C9F50083E246 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

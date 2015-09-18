@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource
+class MViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource
 {
     var locationManager : CLLocationManager =  CLLocationManager()
     var tableView : UITableView = UITableView()
@@ -38,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     {
         super.didReceiveMemoryWarning()
     }
-    private func query(completion:((results:[PFObject]!) -> Void)){
+    private func query(completion:((results:[PFObject]!	) -> Void)){
         var query = PFQuery(className: "Position")
         query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             if let results = results as? [PFObject]{
@@ -63,10 +63,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
         var object = results[indexPath.row]
-        println(object)
         let test = object["latitude"] as! Double
         cell.textLabel?.text = String(format: "%f", test)
-        println(test)
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
