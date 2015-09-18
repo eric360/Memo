@@ -28,7 +28,9 @@ class MViewController: UIViewController, CLLocationManagerDelegate, UITableViewD
         tableView.frame = self.view.frame
         self.view.addSubview(tableView)
         tableView.dataSource = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+//        tableView.registerClass(MTableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.registerNib(UINib(nibName: "MTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.estimatedRowHeight = 4
         self.query { (results) -> Void in
             self.results = results
             self.tableView.reloadData()
@@ -61,10 +63,10 @@ class MViewController: UIViewController, CLLocationManagerDelegate, UITableViewD
     // UITableViewDatasource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! MTableViewCell
         var object = results[indexPath.row]
         let test = object["latitude"] as! Double
-        cell.textLabel?.text = String(format: "%f", test)
+        cell.latitude.text = String(format: "%f", test)
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
