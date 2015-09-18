@@ -64,9 +64,7 @@ class MViewController: UIViewController, CLLocationManagerDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! MTableViewCell
-        var object = results[indexPath.row]
-        let test = object["latitude"] as! Double
-        cell.latitude.text = String(format: "%f", test)
+        cell.object = results[indexPath.row]
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

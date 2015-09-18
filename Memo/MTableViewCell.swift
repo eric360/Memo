@@ -14,6 +14,12 @@ class MTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    var object : PFObject?{
+        didSet{
+            self.latitude.text = String(format: "Latitude: %f", self.object!["latitude"] as! Double)
+            self.longitude.text = String(format: "Longitude: %f", self.object!["longitude"] as! Double)
+        }
+    }
     @IBOutlet var longitude: UILabel!
     @IBOutlet var latitude: UILabel!
     override func setSelected(selected: Bool, animated: Bool) {
